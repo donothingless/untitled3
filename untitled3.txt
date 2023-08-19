@@ -1,0 +1,76 @@
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        String s;
+            if(RadioButton1.Checked)
+                {
+                    s=RadioButton1.Text;
+            }
+                else
+                {
+                    s = RadioButton2.Text;
+                }
+                TextBox6.Text="Name:"+TextBox1.Text +"\n Age:"+TextBox2.Text +"\n Sex:"+ s +"\n Adrress:"+TextBox3.Text + "\n Email Id:"+TextBox4.Text + "\n Phone No:"+TextBox5.Text;
+
+    }
+    protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+    {
+        if(RadioButton1.Checked == true)
+        {
+            RadioButton2.Checked = false;
+
+        }
+        else
+        {
+            RadioButton1.Checked = false;
+        }
+    }
+    protected void RadioButton2_CheckedChanged(object sender, EventArgs e)
+    {
+
+        if (RadioButton2.Checked == true)
+        {
+            RadioButton1.Checked = false;
+
+        }
+        else
+        {
+            RadioButton2.Checked = false;
+        }
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        TextBox1.Text = "";
+        TextBox2.Text = "";
+        TextBox3.Text = "";
+        TextBox4.Text = "";
+        TextBox5.Text = "";
+        RadioButton1.Checked = false;
+        RadioButton2.Checked = false;
+
+    }
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+
+        String s;
+        if (RadioButton1.Checked)
+        {
+            s = RadioButton1.Text;
+        }
+        else
+        {
+            s = RadioButton2.Text;
+        }
+        ListItem newItem = new ListItem();
+        newItem.Text = TextBox1.Text + " " + TextBox2.Text + " " + TextBox3.Text + " " + TextBox4.Text + " " + TextBox5.Text + " " + TextBox6.Text;
+        ListBox1.Items.Add(newItem);
+
+    }
+    protected void Button4_Click(object sender, EventArgs e)
+    {
+        ListBox1.Items.RemoveAt(ListBox1.Items.IndexOf(ListBox1.SelectedItem));
+    }}
